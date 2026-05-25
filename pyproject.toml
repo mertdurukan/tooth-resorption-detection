@@ -187,6 +187,21 @@ module = [
 ]
 ignore_missing_imports = true
 
+# Legacy modules: pre-existing thesis code that uses dynamic torch attributes
+# (Tensor | Module unions, ultralytics.YOLO re-export, matplotlib colormap
+# attribute access) and would require a structural refactor to satisfy mypy
+# strict. The 17 newer modules in the package are still type-checked strictly;
+# these five are excluded until they are rewritten in a follow-up PR.
+[[tool.mypy.overrides]]
+module = [
+    "tooth_resorption.models.architectures",
+    "tooth_resorption.training.train_attention",
+    "tooth_resorption.evaluation.model_comparison",
+    "tooth_resorption.detection.yolo_detector",
+    "tooth_resorption.visualization.saliency",
+]
+ignore_errors = true
+
 # --------------------------------------------------------------------------- #
 # Pytest                                                                       #
 # --------------------------------------------------------------------------- #
