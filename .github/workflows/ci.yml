@@ -42,7 +42,23 @@ jobs:
         run: ruff format --check src scripts tests
 
       - name: Mypy
-        run: mypy src
+        run: |
+          set +e
+          mypy src 2>&1 | tee mypy.log
+          MYPY_EXIT=${PIPESTATUS[0]}
+          # Emit GitHub Actions ::error:: annotations for every mypy error so
+          # the failure is visible via the public check-runs/annotations API
+          # (workflow logs themselves still require repo-admin auth).
+          awk -F':' '
+            /^[^ ].*: error:/ {
+              file=$1; line=$2; col=$3;
+              msg="";
+              for (i=4; i<=NF; i++) msg = msg (i>4 ? ":" : "") $i;
+              sub(/^[ ]+/, "", msg);
+              printf "::error file=%s,line=%s,col=%s::%s\n", file, line, col, msg;
+            }
+          ' mypy.log
+          exit $MYPY_EXIT
 
       - name: Pytest
         run: pytest --cov=tooth_resorption --cov-report=term-missing
