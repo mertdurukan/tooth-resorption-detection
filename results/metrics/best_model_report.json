@@ -1,0 +1,156 @@
+{
+  "best_model": {
+    "name": "vit_base_16",
+    "category": "Attention/Transformer",
+    "overall_score": 0.9454761921394639,
+    "composite_score": 0.9161047591074037,
+    "balance_score": 0.9966487150517422,
+    "inference_score": 0.9776743860805736,
+    "accuracy": 0.8986928104575164,
+    "precision_macro": 0.8949052036981383,
+    "recall_macro": 0.9025800286669852,
+    "f1_macro": 0.898119567789748,
+    "auc_macro": 0.9862261849246307,
+    "precision_per_class": {
+      "Temaslı": 0.9262295081967213,
+      "Bağımsız": 0.8426966292134831,
+      "Rezorpsiyon": 0.9157894736842105
+    },
+    "recall_per_class": {
+      "Temaslı": 0.8692307692307693,
+      "Bağımsız": 0.8928571428571429,
+      "Rezorpsiyon": 0.9456521739130435
+    },
+    "f1_per_class": {
+      "Temaslı": 0.8968253968253969,
+      "Bağımsız": 0.8670520231213873,
+      "Rezorpsiyon": 0.93048128342246
+    },
+    "auc_per_class": {
+      "Temaslı": 0.9814029720279721,
+      "Bağımsız": 0.9837516087516086,
+      "Rezorpsiyon": 0.9935239739943112
+    },
+    "inference_time_ms": 7.441871306475471,
+    "model_size_mb": 327.3046989440918,
+    "total_params": 85800963,
+    "parameters_millions": 85.800963,
+    "confusion_matrix": [
+      [
+        113,
+        12,
+        5
+      ],
+      [
+        6,
+        75,
+        3
+      ],
+      [
+        3,
+        2,
+        87
+      ]
+    ],
+    "model_path": "models\\vit_base_16_best.pth"
+  },
+  "selection_criteria": {
+    "primary": "Composite Score (60% weight)",
+    "secondary": "Class Balance Score (25% weight)",
+    "tertiary": "Inference Speed Score (15% weight)",
+    "description": "Overall score is weighted combination of all criteria"
+  },
+  "top_5_ranking": [
+    {
+      "rank": 1,
+      "model": "vit_base_16",
+      "overall_score": 0.9454761921394639,
+      "composite_score": 0.9161047591074037
+    },
+    {
+      "rank": 2,
+      "model": "swin_tiny",
+      "overall_score": 0.9408349623164205,
+      "composite_score": 0.9158801107228115
+    },
+    {
+      "rank": 3,
+      "model": "densenet_attention",
+      "overall_score": 0.937160740126817,
+      "composite_score": 0.9104314005340457
+    },
+    {
+      "rank": 4,
+      "model": "resnet50_se",
+      "overall_score": 0.9346163667545835,
+      "composite_score": 0.90023991692709
+    },
+    {
+      "rank": 5,
+      "model": "swin_small",
+      "overall_score": 0.9319871126199756,
+      "composite_score": 0.9163549486136577
+    }
+  ],
+  "performance_analysis": {
+    "strengths": [
+      "High overall accuracy (0.899)",
+      "Strong AUC score (0.986)",
+      "Good F1-score balance (0.898)",
+      "Fast inference (7.4ms)"
+    ],
+    "weaknesses": [],
+    "class_performance": {
+      "Temaslı": {
+        "f1_score": 0.8968253968253969,
+        "precision": 0.9262295081967213,
+        "recall": 0.8692307692307693,
+        "status": "good",
+        "note": "Strong performance on this class"
+      },
+      "Bağımsız": {
+        "f1_score": 0.8670520231213873,
+        "precision": 0.8426966292134831,
+        "recall": 0.8928571428571429,
+        "status": "good",
+        "note": "Strong performance on this class"
+      },
+      "Rezorpsiyon": {
+        "f1_score": 0.93048128342246,
+        "precision": 0.9157894736842105,
+        "recall": 0.9456521739130435,
+        "status": "good",
+        "note": "Strong performance on this class"
+      }
+    }
+  },
+  "recommendation": {
+    "deployment_ready": true,
+    "confidence": "high",
+    "reasons": [
+      "High overall performance and balanced across classes",
+      "Fast inference suitable for real-time applications"
+    ],
+    "alternatives": [
+      {
+        "rank": 2,
+        "model": "swin_tiny",
+        "overall_score": 0.9408349623164205,
+        "note": "Similar performance, consider for ensemble or comparison"
+      },
+      {
+        "rank": 3,
+        "model": "densenet_attention",
+        "overall_score": 0.937160740126817,
+        "note": "Similar performance, consider for ensemble or comparison"
+      },
+      {
+        "rank": 4,
+        "model": "resnet50_se",
+        "overall_score": 0.9346163667545835,
+        "note": "Similar performance, consider for ensemble or comparison"
+      }
+    ],
+    "next_steps": []
+  }
+}

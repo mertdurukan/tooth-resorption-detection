@@ -1,0 +1,106 @@
+{
+  "ensemble": {
+    "accuracy": 0.9673202614379085,
+    "f1": 0.9680460020029518,
+    "auc": 0.9970604891102148,
+    "composite": 0.9774755841836917,
+    "models": [
+      "swin_small_mha_head",
+      "swin_small",
+      "vit_base_16"
+    ]
+  },
+  "gradcam": "completed",
+  "kfold": {
+    "model_type": "swin_small_mha_head",
+    "n_folds": 5,
+    "epochs": 30,
+    "accuracy_mean": 0.496562665256478,
+    "accuracy_std": 0.05528516605230406,
+    "precision_mean": 0.5076880690115985,
+    "precision_std": 0.06266195284164275,
+    "recall_mean": 0.48550547749464157,
+    "recall_std": 0.057963395131765856,
+    "f1_mean": 0.48570920312491256,
+    "f1_std": 0.05860161462965359,
+    "auc_mean": 0.6547267961583246,
+    "auc_std": 0.05423349468119443,
+    "total_time_hours": 0.20633957544962564,
+    "fold_results": [
+      {
+        "fold": 1,
+        "accuracy": 0.5483870967741935,
+        "precision": 0.581143951833607,
+        "recall": 0.5462808605223465,
+        "f1": 0.550805165406184,
+        "auc": 0.7184454985898574,
+        "time_minutes": 2.4946436325709027
+      },
+      {
+        "fold": 2,
+        "accuracy": 0.4426229508196721,
+        "precision": 0.4306165099268548,
+        "recall": 0.42458521870286575,
+        "f1": 0.4184624017957351,
+        "auc": 0.6344409428540756,
+        "time_minutes": 2.4689634839693704
+      },
+      {
+        "fold": 3,
+        "accuracy": 0.4426229508196721,
+        "precision": 0.4678030303030303,
+        "recall": 0.4256745433216021,
+        "f1": 0.4369799691833591,
+        "auc": 0.5868894949606304,
+        "time_minutes": 2.467698923746745
+      },
+      {
+        "fold": 4,
+        "accuracy": 0.5573770491803278,
+        "precision": 0.5597147950089126,
+        "recall": 0.5336014747779454,
+        "f1": 0.5367231638418078,
+        "auc": 0.7015253429754114,
+        "time_minutes": 2.487731393178304
+      },
+      {
+        "fold": 5,
+        "accuracy": 0.4918032786885246,
+        "precision": 0.4991620579855874,
+        "recall": 0.49738529014844807,
+        "f1": 0.48557531539747684,
+        "auc": 0.6323327014116488,
+        "time_minutes": 2.4613198399543763
+      }
+    ],
+    "confusion_matrix": [
+      [
+        72,
+        29,
+        29
+      ],
+      [
+        40,
+        32,
+        12
+      ],
+      [
+        29,
+        15,
+        48
+      ]
+    ]
+  },
+  "uncertainty": {
+    "overall_accuracy": 0.8627450980392157,
+    "mean_confidence": 0.7520322010797613,
+    "mean_uncertainty": 0.0,
+    "high_confidence_accuracy": 0.9591836734693877,
+    "low_uncertainty_accuracy": NaN,
+    "per_class_uncertainty": {
+      "Temasli": 0.0,
+      "Bagimsiz": 0.0,
+      "Rezorpsiyon": 0.0
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model_type": "CNN_Classification",
+  "best_config": {
+    "lr": 0.001,
+    "batch_size": 8,
+    "optimizer": "Adam",
+    "epochs": 50
+  },
+  "best_val_acc": 0.4193548262119293,
+  "best_val_loss": 1.0757596492767334,
+  "training_time": 364.65405654907227,
+  "all_configs": [
+    {
+      "config": {
+        "lr": 0.001,
+        "batch_size": 8,
+        "optimizer": "Adam",
+        "epochs": 50
+      },
+      "val_acc": 0.4193548262119293,
+      "val_loss": 1.0757596492767334
+    },
+    {
+      "config": {
+        "lr": 0.0005,
+        "batch_size": 4,
+        "optimizer": "Adam",
+        "epochs": 50
+      },
+      "val_acc": 0.4193548262119293,
+      "val_loss": 1.0778928995132446
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "batch_size": 8,
+        "optimizer": "SGD",
+        "epochs": 50
+      },
+      "val_acc": 0.4193548262119293,
+      "val_loss": 1.0740764141082764
+    }
+  ],
+  "timestamp": "2025-11-19T22:06:24.936979"
+}

@@ -1,0 +1,13 @@
+{
+  "model_type": "swin_small_cbam_stages",
+  "best_composite": 0.5783937675942623,
+  "training_time": 236.8945815563202,
+  "config": {
+    "lr": 5e-05,
+    "batch_size": 8,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\swin_small_cbam_stages_best.pth"
+}

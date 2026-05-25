@@ -1,0 +1,13 @@
+Model,Category,Accuracy,Precision,Recall,F1-Score,AUC,Composite,Inference(ms),Size(MB)
+swin_small,Attention/Transformer,0.8987,0.8947,0.9029,0.8981,0.9874,0.9164,39.28,186.31
+vit_base_16,Attention/Transformer,0.8987,0.8949,0.9026,0.8981,0.9862,0.9161,7.44,327.30
+swin_tiny,Attention/Transformer,0.9020,0.9036,0.8988,0.9003,0.9747,0.9159,19.13,104.99
+densenet_attention,Attention/Transformer,0.8954,0.8942,0.8961,0.8946,0.9718,0.9104,20.08,42.56
+resnet50_se,Attention/Transformer,0.8824,0.8783,0.8827,0.8800,0.9778,0.9002,11.80,92.36
+swin_base,Attention/Transformer,0.8595,0.8590,0.8718,0.8596,0.9693,0.8839,36.48,330.91
+vit_base_32,Attention/Transformer,0.8595,0.8645,0.8507,0.8559,0.9428,0.8747,7.78,333.62
+efficientnet_attention,Attention/Transformer,0.8529,0.8558,0.8456,0.8481,0.9279,0.8661,21.35,40.33
+vit_large_16,Attention/Transformer,0.7222,0.8190,0.6832,0.7061,0.8876,0.7636,14.05,1157.02
+YOLOv11_Detection,YOLO,0.4281,0.4754,0.3373,0.2071,0.5171,0.3930,23.40,15.32
+resnet50_cbam,Attention/Transformer,0.4314,0.3733,0.3522,0.2614,0.4779,0.3792,14.06,92.36
+CNN_Classification,CNN,0.4248,0.1416,0.3333,0.1988,0.5295,0.3256,84.96,7.56

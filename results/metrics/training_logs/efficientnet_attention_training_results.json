@@ -1,0 +1,13 @@
+{
+  "model_type": "efficientnet_attention",
+  "best_composite": 0.5477481293750822,
+  "training_time": 100.26330494880676,
+  "config": {
+    "lr": 5e-05,
+    "batch_size": 8,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\efficientnet_attention_best.pth"
+}

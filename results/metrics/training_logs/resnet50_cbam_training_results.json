@@ -1,0 +1,13 @@
+{
+  "model_type": "resnet50_cbam",
+  "best_composite": 0.6234977631558974,
+  "training_time": 771.6973834037781,
+  "config": {
+    "lr": 0.0001,
+    "batch_size": 16,
+    "weight_decay": 0.0001,
+    "optimizer": "Adam",
+    "epochs": 50
+  },
+  "best_model_path": "models\\resnet50_cbam_best.pth"
+}

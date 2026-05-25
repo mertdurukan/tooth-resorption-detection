@@ -1,0 +1,13 @@
+{
+  "model_type": "swin_small_mha_head",
+  "best_composite": 0.5979173951269329,
+  "training_time": 297.9166090488434,
+  "config": {
+    "lr": 5e-05,
+    "batch_size": 8,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\swin_small_mha_head_best.pth"
+}

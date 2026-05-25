@@ -1,0 +1,72 @@
+{
+  "ensemble_models": [
+    "swin_small_mha_head",
+    "swin_small",
+    "vit_base_16"
+  ],
+  "total_samples": 306,
+  "baseline_accuracy": 0.9673202614379085,
+  "threshold_results": [
+    {
+      "threshold": 0.0,
+      "samples": 306,
+      "coverage": 100.0,
+      "accuracy": 0.9673202614379085,
+      "f1": 0.9680460020029518,
+      "auc": 0.9970604891102148
+    },
+    {
+      "threshold": 0.5,
+      "samples": 298,
+      "coverage": 97.38562091503267,
+      "accuracy": 0.9731543624161074,
+      "f1": 0.973575961054222,
+      "auc": 0.99767255558196
+    },
+    {
+      "threshold": 0.6,
+      "samples": 277,
+      "coverage": 90.52287581699346,
+      "accuracy": 0.9855595667870036,
+      "f1": 0.9856810392681356,
+      "auc": 0.9987238612925098
+    },
+    {
+      "threshold": 0.7,
+      "samples": 238,
+      "coverage": 77.77777777777779,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "auc": 1.0
+    },
+    {
+      "threshold": 0.8,
+      "samples": 206,
+      "coverage": 67.3202614379085,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "auc": 1.0
+    },
+    {
+      "threshold": 0.9,
+      "samples": 133,
+      "coverage": 43.4640522875817,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "auc": 1.0
+    },
+    {
+      "threshold": 0.95,
+      "samples": 44,
+      "coverage": 14.37908496732026,
+      "accuracy": 1.0,
+      "f1": 1.0,
+      "auc": 1.0
+    }
+  ],
+  "best_recommendation": {
+    "threshold": 0.7,
+    "accuracy": 1.0,
+    "coverage": 77.77777777777779
+  }
+}

@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Wisdom Tooth Resorption Detection on Dental X-rays"
+type: software
+authors:
+  - family-names: "Durukan"
+    given-names: "Mert"
+    affiliation: "Mersin University"
+year: 2026
+version: "0.2.0"
+license: MIT
+repository-code: "https://github.com/mertdurukan/tooth-resorption-detection"
+abstract: >-
+  Medical computer vision pipeline that classifies wisdom-tooth root
+  resorption on panoramic dental X-rays. Compares a from-scratch CNN
+  baseline against an ImageNet-pretrained ViT-Base/16, lifting macro-F1
+  from 0.20 to 0.90 on the same held-out test split.
+keywords:
+  - medical-imaging
+  - dental-xray
+  - vision-transformer
+  - transfer-learning
+  - pytorch
+references:
+  - type: thesis
+    title: "Attention-based Deep Learning Methods for Wisdom-Tooth Root Resorption Detection"
+    authors:
+      - family-names: "Durukan"
+        given-names: "Mert"
+    institution:
+      name: "Mersin University, Graduate School of Natural and Applied Sciences"
+    thesis-type: "MSc thesis"
+    year: 2026

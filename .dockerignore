@@ -1,0 +1,75 @@
+# Keep the build context small + secret-free.
+# Patterns mirror the runtime exclusions used by .gitignore but are tighter
+# because the Docker image only needs source code + packaging metadata.
+
+# Version control
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# Virtual environments / Python caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Data + model artefacts (KVKK / GDPR) - never bake into image
+data/
+models/
+checkpoints/
+runs/
+mlruns/
+wandb/
+lightning_logs/
+*.h5
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.ckpt
+*.safetensors
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+
+# Generated reports / plots / notebooks
+notebooks/
+results/
+docs/
+*.ipynb
+
+# Tests + tooling (not needed inside the deployment image)
+tests/
+.pre-commit-config.yaml
+CITATION.cff
+CONTRIBUTING.md
+
+# OS / IDE noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Anonymisation map - reverse lookup must not leave the workstation
+**/anonymization_map.json

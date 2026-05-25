@@ -1,0 +1,13 @@
+Model,Parameters (M),Size (MB),Composite Score,Params/Performance
+CNN_Classification,0.65,7.56,0.3256,1.95
+YOLOv11_Detection,0.00,15.32,0.3930,0.00
+densenet_attention,11.16,42.56,0.9104,12.12
+efficientnet_attention,10.57,40.33,0.8661,12.07
+resnet50_cbam,24.21,92.36,0.3792,62.20
+resnet50_se,24.21,92.36,0.9002,26.60
+swin_base,86.75,330.91,0.8839,97.05
+swin_small,48.84,186.31,0.9164,52.72
+swin_tiny,27.52,104.99,0.9159,29.72
+vit_base_16,85.80,327.30,0.9161,92.65
+vit_base_32,87.46,333.62,0.8747,98.86
+vit_large_16,303.30,1157.02,0.7636,392.06

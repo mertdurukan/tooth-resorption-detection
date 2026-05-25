@@ -1,0 +1,13 @@
+{
+  "model_type": "vit_base_16_cbam_stages",
+  "best_composite": 0.4895395599711456,
+  "training_time": 113.44347476959229,
+  "config": {
+    "lr": 1e-05,
+    "batch_size": 8,
+    "weight_decay": 1e-05,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\vit_base_16_cbam_stages_best.pth"
+}

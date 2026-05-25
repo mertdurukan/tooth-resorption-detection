@@ -1,0 +1,13 @@
+{
+  "model_type": "vit_base_16_cbam_head",
+  "best_composite": 0.5594406418481371,
+  "training_time": 864.4198565483093,
+  "config": {
+    "lr": 1e-05,
+    "batch_size": 8,
+    "weight_decay": 1e-05,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\vit_base_16_cbam_head_best.pth"
+}

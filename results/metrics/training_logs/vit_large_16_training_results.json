@@ -1,0 +1,13 @@
+{
+  "model_type": "vit_large_16",
+  "best_composite": 0.5207332220961872,
+  "training_time": 1148.0480916500092,
+  "config": {
+    "lr": 5e-05,
+    "batch_size": 8,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\vit_large_16_best.pth"
+}

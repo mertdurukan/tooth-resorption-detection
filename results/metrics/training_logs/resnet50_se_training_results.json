@@ -1,0 +1,13 @@
+{
+  "model_type": "resnet50_se",
+  "best_composite": 0.5722697572759146,
+  "training_time": 658.5060997009277,
+  "config": {
+    "lr": 5e-05,
+    "batch_size": 8,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\resnet50_se_best.pth"
+}

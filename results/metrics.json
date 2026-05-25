@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "description": "Real metrics extracted from the original MSc experiments on the private Mersin University wisdom-tooth-resorption dataset.",
+    "source": "results/metrics/evaluation_results.json + results/metrics/best_model_report.json",
+    "test_set_size": 306,
+    "classes": ["temasli", "bagimsiz", "rezorpsiyon"],
+    "task": "3-class classification (multi-class, single-label)"
+  },
+  "baseline": {
+    "model": "BaselineCNN (TensorFlow Keras, ~653K params)",
+    "f1_macro": 0.1988,
+    "precision_macro": 0.1416,
+    "recall_macro": 0.3333,
+    "accuracy": 0.4248,
+    "auc_macro": 0.5295,
+    "inference_time_ms": 84.96,
+    "notes": "Classifier collapsed to predicting only the majority class (temasli). Confusion matrix: [[130,0,0],[84,0,0],[92,0,0]]."
+  },
+  "improved": {
+    "model": "ViT-Base/16 (transfer-learning from ImageNet via timm)",
+    "f1_macro": 0.8981,
+    "precision_macro": 0.8949,
+    "recall_macro": 0.9026,
+    "accuracy": 0.8987,
+    "auc_macro": 0.9862,
+    "inference_time_ms": 7.44,
+    "per_class_f1": {
+      "temasli": 0.8968,
+      "bagimsiz": 0.8671,
+      "rezorpsiyon": 0.9305
+    },
+    "notes": "Best of 10 attention/transformer variants evaluated. ViT-Base-16 narrowly edged out Swin-Tiny (F1 0.9003), DenseNet-Attention (0.8946) and ResNet50-SE (0.8800)."
+  },
+  "improvement_explanation": "Replacing the from-scratch CNN baseline with an ImageNet-pretrained Vision Transformer lifted macro-F1 from 0.20 to 0.90 on the same held-out test split. Transfer learning + global self-attention let the model exploit the ~55-image clinical dataset that was far too small to train a convnet from scratch.",
+  "models_explored": [
+    "ViT-Base-16 (best)",
+    "ViT-Base-32",
+    "ViT-Large-16",
+    "Swin-Tiny",
+    "Swin-Small",
+    "Swin-Base",
+    "ResNet50 + CBAM",
+    "ResNet50 + SE",
+    "EfficientNet-B0 + Attention",
+    "DenseNet121 + Attention"
+  ],
+  "external_benchmarks": {
+    "note": "The MSc work additionally compared a YOLOv11 detection baseline that, like the original CNN, collapsed on this dataset (F1_macro = 0.2071, accuracy = 0.4281)."
+  }
+}

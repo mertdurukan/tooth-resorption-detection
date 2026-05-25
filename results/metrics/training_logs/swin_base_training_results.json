@@ -1,0 +1,13 @@
+{
+  "model_type": "swin_base",
+  "best_composite": 0.5942369135416966,
+  "training_time": 282.4476659297943,
+  "config": {
+    "lr": 0.0001,
+    "batch_size": 16,
+    "weight_decay": 0.0001,
+    "optimizer": "Adam",
+    "epochs": 50
+  },
+  "best_model_path": "models\\swin_base_best.pth"
+}

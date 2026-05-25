@@ -1,0 +1,31 @@
+# Thin requirements shim - the source of truth is pyproject.toml.
+# Install everything in one shot:
+#   pip install -e ".[detection,deployment,dev]"
+#
+# Full install (all extras, recommended for development & MLflow tracking):
+#   pip install -e ".[detection,deployment,dev,notebook,tracking,tensorflow]"
+#
+# Core runtime dependencies
+numpy>=1.24,<2.0
+pandas>=2.0
+Pillow>=10.0
+matplotlib>=3.7
+seaborn>=0.12
+PyYAML>=6.0
+scikit-learn>=1.3
+torch>=2.0
+torchvision>=0.15
+timm>=0.9
+einops>=0.6
+
+# Optional - YOLO detection track
+ultralytics>=8.0
+opencv-python>=4.8
+
+# Optional - deployment export
+onnx>=1.14
+onnxruntime>=1.15
+flask>=2.0
+
+# Optional - experiment tracking
+mlflow>=2.0

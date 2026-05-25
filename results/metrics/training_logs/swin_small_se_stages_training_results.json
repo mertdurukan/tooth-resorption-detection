@@ -1,0 +1,13 @@
+{
+  "model_type": "swin_small_se_stages",
+  "best_composite": 0.6422645226280225,
+  "training_time": 264.32214093208313,
+  "config": {
+    "lr": 1e-05,
+    "batch_size": 8,
+    "weight_decay": 1e-05,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\swin_small_se_stages_best.pth"
+}

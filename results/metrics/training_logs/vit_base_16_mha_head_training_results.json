@@ -1,0 +1,13 @@
+{
+  "model_type": "vit_base_16_mha_head",
+  "best_composite": 0.657207979306499,
+  "training_time": 1202.6835458278656,
+  "config": {
+    "lr": 1e-05,
+    "batch_size": 8,
+    "weight_decay": 1e-05,
+    "optimizer": "AdamW",
+    "epochs": 50
+  },
+  "best_model_path": "models\\vit_base_16_mha_head_best.pth"
+}

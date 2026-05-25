@@ -1,0 +1,70 @@
+{
+  "model_type": "swin_small_mha_head",
+  "model_path": "models/swin_small_mha_head_best.pth",
+  "total_samples": 306,
+  "class_distribution": {
+    "Temasli": 130,
+    "Bagimsiz": 84,
+    "Rezorpsiyon": 92
+  },
+  "general_metrics": {
+    "accuracy": 0.9052287581699346,
+    "precision_macro": 0.9037275202323746,
+    "recall_macro": 0.9020916281785847,
+    "f1_macro": 0.9013275899824813,
+    "auc_macro": 0.9646811606038038,
+    "composite_score": 0.9154113314334358
+  },
+  "weighted_metrics": {
+    "precision_weighted": 0.9083041212300682,
+    "recall_weighted": 0.9052287581699346,
+    "f1_weighted": 0.9053550301112642,
+    "auc_weighted": 0.9646690731850848
+  },
+  "per_class_metrics": {
+    "Temasli": {
+      "precision": 0.9444444444444444,
+      "recall": 0.9153846153846154,
+      "f1_score": 0.9296875,
+      "auc": 0.9637893356643358,
+      "support": 130
+    },
+    "Bagimsiz": {
+      "precision": 0.922077922077922,
+      "recall": 0.8452380952380952,
+      "f1_score": 0.8819875776397516,
+      "auc": 0.9609073359073359,
+      "support": 84
+    },
+    "Rezorpsiyon": {
+      "precision": 0.8446601941747572,
+      "recall": 0.9456521739130435,
+      "f1_score": 0.8923076923076924,
+      "auc": 0.96934681023974,
+      "support": 92
+    }
+  },
+  "confusion_matrix": [
+    [
+      119,
+      4,
+      7
+    ],
+    [
+      4,
+      71,
+      9
+    ],
+    [
+      3,
+      2,
+      87
+    ]
+  ],
+  "inference": {
+    "avg_time_ms": 44.877496420168406,
+    "std_time_ms": 154.43852150779793,
+    "total_params": 51205005,
+    "model_size_mb": 586.4177827835083
+  }
+}
