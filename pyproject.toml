@@ -131,6 +131,9 @@ ignore = [
 "src/tooth_resorption/*/__init__.py" = ["F401"]
 "scripts/*" = ["T201"]
 
+[tool.ruff.lint.isort]
+known-first-party = ["tooth_resorption"]
+
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
