@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 import torch
+
 from tooth_resorption.config import NUM_CLASSES
 from tooth_resorption.models.model import build_model, count_parameters
 

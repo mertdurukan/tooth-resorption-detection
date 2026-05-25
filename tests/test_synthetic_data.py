@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 from PIL import Image
+
 from tooth_resorption.config import CLASS_NAMES, IMAGE_SIZE, NUM_CLASSES
 from tooth_resorption.data.synthetic_data import generate
 

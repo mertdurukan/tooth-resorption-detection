@@ -26,6 +26,7 @@ matplotlib.use("Agg", force=True)
 import pytest
 import torch
 from PIL import Image
+
 from tooth_resorption import config as cfg_module
 from tooth_resorption.data.data_loader import build_dataloaders
 from tooth_resorption.data.synthetic_data import generate

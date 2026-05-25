@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pytest
 import torch
+
 from tooth_resorption.config import NUM_CLASSES
 from tooth_resorption.data.data_loader import SyntheticToothDataset, build_dataloaders
 from tooth_resorption.data.preprocessing import build_transforms
@@ -42,9 +43,9 @@ def test_build_dataloaders_stratification() -> None:
     val_labels: list[int] = []
     for _, labels in val_loader:
         val_labels.extend(labels.tolist())
-    assert set(val_labels) == set(
-        range(NUM_CLASSES)
-    ), f"Stratified split should keep at least one sample per class in val; got {set(val_labels)}"
+    assert set(val_labels) == set(range(NUM_CLASSES)), (
+        f"Stratified split should keep at least one sample per class in val; got {set(val_labels)}"
+    )
 
     train_size = sum(x.size(0) for x, _ in train_loader)
     val_size = sum(x.size(0) for x, _ in val_loader)
