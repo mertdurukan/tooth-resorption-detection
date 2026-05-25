@@ -63,13 +63,28 @@ tracking = [
     "mlflow>=2.0",
 ]
 dev = [
-    "ruff>=0.5",
-    "mypy>=1.8",
-    "pytest>=7.4",
-    "pytest-cov>=4.1",
-    "pre-commit>=3.5",
-    "types-Pillow",
-    "types-PyYAML",
+    # Tools pinned to exact versions to eliminate CI/local drift. Without
+    # exact pins, a fresh CI venv resolves to the latest release on PyPI
+    # while existing local venvs keep older cached versions; the resulting
+    # behaviour differences (especially in ``ruff`` and ``mypy``) caused
+    # four "works locally, fails on CI" iterations before this commit.
+    # When bumping, recreate ``.venv-ci`` from scratch and re-run the
+    # full CI command list (``ruff check``, ``ruff format --check``,
+    # ``mypy src``, ``pytest --cov``) before committing the new pins.
+    "ruff==0.15.14",
+    "mypy==2.1.0",
+    "pytest==9.0.3",
+    "pytest-cov==7.1.0",
+    "pre-commit==4.6.0",
+    "types-Pillow==10.2.0.20240822",
+    "types-PyYAML==6.0.12.20260518",
+    # Required at test-collection time by ``tests/test_flask_api.py``,
+    # which imports ``deployment.api.flask_api``. Without ``flask`` in the
+    # dev extras, CI installs only this group and pytest errors out with
+    # ``ModuleNotFoundError: No module named 'flask'`` for four tests.
+    # Flask itself is also exposed via the ``deployment`` extras, but
+    # tests must be runnable from the minimal dev install alone.
+    "flask>=3.0,<4.0",
 ]
 notebook = [
     "jupyter>=1.0",
