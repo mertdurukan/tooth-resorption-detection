@@ -64,8 +64,15 @@ desktop.ini
 *.pb
 *.ckpt
 *.safetensors
-models/
-checkpoints/
+# Anchor ``models/`` to the repo root so the trained-model output folder
+# is ignored but the ``src/tooth_resorption/models/`` Python package
+# (which contains model.py / architectures.py / __init__.py) remains
+# tracked. The previous un-anchored ``models/`` pattern matched the
+# package directory recursively and caused CI to checkout the package
+# without its source files, leading to mypy ``Cannot find implementation
+# or library stub for module named "tooth_resorption.models.model"``.
+/models/
+/checkpoints/
 deployment/onnx/
 deployment/torchscript/
 deployment/quantized/
