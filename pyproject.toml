@@ -172,6 +172,24 @@ disallow_any_generics = false
 disallow_subclassing_any = false
 files = ["src"]
 mypy_path = "src"
+# Legacy modules: pre-existing thesis code that uses dynamic torch
+# attributes (Tensor | Module unions, ultralytics.YOLO re-export,
+# matplotlib colormap attribute access) and would require a structural
+# refactor to satisfy mypy --strict. The 17 newer modules in the
+# package are still type-checked strictly; these five are excluded
+# at the file-system level so the exclusion is independent of how
+# mypy resolves the package name (a module-based override was tried
+# in commit 3953175 and worked on Windows but kept failing in the
+# Linux CI runner, because ``mypy src`` resolves files via path
+# discovery rather than the module overrides). Excluding by path
+# regex is platform-independent and effective in both environments.
+exclude = '''(?x)(
+    src/tooth_resorption/models/architectures\.py$
+  | src/tooth_resorption/training/train_attention\.py$
+  | src/tooth_resorption/evaluation/model_comparison\.py$
+  | src/tooth_resorption/detection/yolo_detector\.py$
+  | src/tooth_resorption/visualization/saliency\.py$
+)'''
 
 [[tool.mypy.overrides]]
 module = [
@@ -201,21 +219,6 @@ module = [
     "seaborn.*",
 ]
 ignore_missing_imports = true
-
-# Legacy modules: pre-existing thesis code that uses dynamic torch attributes
-# (Tensor | Module unions, ultralytics.YOLO re-export, matplotlib colormap
-# attribute access) and would require a structural refactor to satisfy mypy
-# strict. The 17 newer modules in the package are still type-checked strictly;
-# these five are excluded until they are rewritten in a follow-up PR.
-[[tool.mypy.overrides]]
-module = [
-    "tooth_resorption.models.architectures",
-    "tooth_resorption.training.train_attention",
-    "tooth_resorption.evaluation.model_comparison",
-    "tooth_resorption.detection.yolo_detector",
-    "tooth_resorption.visualization.saliency",
-]
-ignore_errors = true
 
 # --------------------------------------------------------------------------- #
 # Pytest                                                                       #
