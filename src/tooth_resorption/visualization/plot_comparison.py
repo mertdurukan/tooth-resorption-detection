@@ -1,7 +1,14 @@
 """Render the baseline-vs-improved comparison bar chart.
 
-Reads ``results/metrics.json`` and writes ``results/plots/comparison.png``.
-The figure is regenerated whenever ``metrics.json`` changes.
+Reads ``results/metrics.json`` and writes
+``results/plots/comparison_smoke.png``. The figure is regenerated whenever
+``metrics.json`` changes.
+
+NOTE: The slide-style benchmark chart shipped at
+``results/plots/comparison.png`` is produced by
+``scripts/generate_thesis_figures.py`` (function ``figure_slide``) from the
+real benchmark table. This module is the legacy smoke-pipeline renderer and
+intentionally writes to a different filename to avoid clobbering it.
 """
 
 from __future__ import annotations
@@ -23,13 +30,13 @@ def render(metrics_path: Path | None = None, out_path: Path | None = None) -> Pa
 
     Args:
         metrics_path: Defaults to ``results/metrics.json``.
-        out_path: Defaults to ``results/plots/comparison.png``.
+        out_path: Defaults to ``results/plots/comparison_smoke.png``.
 
     Returns:
         Path to the written PNG.
     """
     metrics_path = metrics_path or (RESULTS_DIR / "metrics.json")
-    out_path = out_path or (PLOTS_DIR / "comparison.png")
+    out_path = out_path or (PLOTS_DIR / "comparison_smoke.png")
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     with metrics_path.open("r", encoding="utf-8") as f:
